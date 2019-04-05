@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>internal dashboard - ronthecookie.me</title>
+        <link rel="stylesheet" href="/style.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="c">
+        <p class="title">internal dashboard</p>
+        <div class="flex">
+            <main style="width: 50vw;">
+                <p class="subtitle">sdab build status</p>
+                <ul>
+                    <%- builds.map(build => include("parts/build",
+                    {build})).join("\n") %>
+                </ul>
+            </main>
+            <iframe src="//status.ronthecookie.me" frameborder="0" style="width: 30vw;"></iframe>
+        </div>
+        <div class="flex">
+            <main id="wtlogs">
+                <p class="subtitle">watchtower logs</p>
+                <%- watchtowerLogs.split("\n").join("<br>") %>
+            </main>
+        </div>
+    </body>
+</html>

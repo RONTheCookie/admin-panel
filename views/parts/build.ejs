@@ -1,0 +1,7 @@
+<% const map = {ok:"done",processing:"cached", fail: "highlight_off"};
+const colormap = {ok:"#38C172", processing: "#F6993F", fail: "#E3342F"}
+%>
+<li>
+    <i class="material-icons" style="color: <%= colormap[build.status] %>"><%= map[build.status] %></i>
+    <%= build.repo.owner %>/<%= build.repo.name %> - <%= build.repo.commitMsg %>
+</li>

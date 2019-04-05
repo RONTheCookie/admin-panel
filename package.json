@@ -1,0 +1,19 @@
+{
+  "name": "sdab",
+  "version": "1.0.0",
+  "description": "Selfhosted Docker Automated Builds",
+  "main": "app.js",
+  "author": "RONTheCookie <ronthecookie0101@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "log": "^5.0.0",
+    "log-node": "^5.1.0",
+    "mz": "^2.7.0",
+    "rethinkdbdash": "^2.3.31"
+  },
+  "scripts": {
+    "start": "LOG_TIME=abs LOG_LEVEL=info node ."
+  }
+}
