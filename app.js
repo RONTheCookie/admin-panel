@@ -12,16 +12,20 @@ const r = require(`rethinkdbdash`)(dbOpts); // Connect to RethinkDB
 app.use(express.static("assets"));
 app.set("view engine", "ejs");
 
-app.get("/", async (req, res) => {
-    async function getWatchtower() {
-        try {
-            return (await child.exec("docker logs new_watchtower_1 --tail 10")).map(a => a.toString()).join("");
-        } catch (err) {
-            return "ERROR: couldn't get watchtower logs."
-        }
+async function getWatchtowerLogs() {
+    try {
+        return (await child.exec("docker logs new_watchtower_1 --tail 10")).map(a => a.toString()).join("");
+    } catch (err) {
+        return "ERROR: couldn't get watchtower logs."
     }
-    const builds = await r.table("builds").orderBy(r.desc("createdAt")).limit(10).run();
-    const watchtowerLogs = await getWatchtower();
+}
+async function getBuilds() {
+    return await r.table("builds").orderBy(r.desc("createdAt")).limit(10).run();
+}
+
+app.get("/", async (req, res) => {
+    const builds = await getBuilds();
+    const watchtowerLogs = await getWatchtowerLogs();
     res.render("index", { builds, watchtowerLogs });
 });
 

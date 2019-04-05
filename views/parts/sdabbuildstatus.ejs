@@ -1,0 +1,7 @@
+<main style="width: 50vw;" id="sdab-build-status">
+    <p class="subtitle">sdab build status</p>
+    <ul>
+        <%- builds.map(build => include("build",
+                    {build})).join("\n") %>
+    </ul>
+</main>

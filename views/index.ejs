@@ -14,20 +14,11 @@
     <body class="c">
         <p class="title">internal dashboard</p>
         <div class="flex">
-            <main style="width: 50vw;">
-                <p class="subtitle">sdab build status</p>
-                <ul>
-                    <%- builds.map(build => include("parts/build",
-                    {build})).join("\n") %>
-                </ul>
-            </main>
+            <%- include("parts/sdabbuildstatus", {builds}) %>
             <iframe src="//status.ronthecookie.me" frameborder="0" style="width: 30vw;"></iframe>
         </div>
         <div class="flex">
-            <main id="wtlogs">
-                <p class="subtitle">watchtower logs</p>
-                <%- watchtowerLogs.split("\n").join("<br>") %>
-            </main>
+            <%- include("parts/wtlogs", {watchtowerLogs}) %>
         </div>
     </body>
 </html>
