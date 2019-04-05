@@ -1,7 +1,7 @@
 {
-  "name": "sdab",
+  "name": "admin-panel",
   "version": "1.0.0",
-  "description": "Selfhosted Docker Automated Builds",
+  "description": "",
   "main": "app.js",
   "author": "RONTheCookie <ronthecookie0101@gmail.com>",
   "license": "MIT",
