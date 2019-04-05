@@ -13,6 +13,7 @@
     background: black;
     color: white;
     padding: 1em;
+    font: monospace 10pt;
 }
 
 .blogframe {
