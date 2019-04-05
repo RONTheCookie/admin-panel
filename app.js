@@ -20,7 +20,7 @@ app.get("/", async (req, res) => {
             return "ERROR: couldn't get watchtower logs."
         }
     }
-    const builds = await r.table("builds").orderBy("createdAt").limit(10).run();
+    const builds = await r.table("builds").orderBy("createdAt").asc().limit(10).run();
     const watchtowerLogs = await getWatchtower();
     res.render("index", { builds, watchtowerLogs });
 });
