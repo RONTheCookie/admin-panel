@@ -10,13 +10,20 @@
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         />
-        <meta http-equiv="refresh" content="10">
+        <meta http-equiv="refresh" content="10" />
     </head>
     <body class="c">
         <p class="title">internal dashboard</p>
         <div class="flex">
             <%- include("parts/sdabbuildstatus", {builds}) %>
-            <iframe src="//status.ronthecookie.me" frameborder="0" style="width: 30vw;"></iframe>
+            <iframe
+                src="//status.ronthecookie.me"
+                frameborder="0"
+                style="width: 30vw;"
+            ></iframe>
+        </div>
+        <div class="flex">
+            <%- include("parts/sdablogs", {sdabLogs}) %>
         </div>
         <div class="flex">
             <%- include("parts/wtlogs", {watchtowerLogs}) %>
